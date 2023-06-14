@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,11 +21,15 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "Enemy")
+        if (collision.name == "Wall")
         {
-            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
+        if (collision.name == "Enemy")
+        {
+            Destroy(gameObject);
+        }
+       
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
