@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BreakWall : MonoBehaviour
+public class Clear : MonoBehaviour
 {
-    public Key k;
-    public bool isbool = true;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,12 +14,19 @@ public class BreakWall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(k != isbool)
+        if(gameObject == false)
         {
-            //gameObject.SetActive(false);
-            gameObject.GetComponent<Transform>().position -= (new Vector3(0, 2f, 0));
 
         }
     }
-    
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.name == "Player")
+        {
+            Destroy(gameObject);
+            
+        }
+
+    }
 }

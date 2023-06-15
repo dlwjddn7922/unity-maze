@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +20,8 @@ public class Key : MonoBehaviour
     {
         
         if (collision.name == "Player")
-        {
-            Destroy(gameObject);
+        { 
+           Destroy(gameObject);   
         }
 
     }
